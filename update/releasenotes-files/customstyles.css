@@ -1,0 +1,209 @@
+﻿/*
+    Code Snippet Coloring
+*/
+
+.code-section { overflow-x: auto; background-color: #eee; padding: 10px; }
+code { font-family: Consolas, "Courier New" , Courier, Sans-Serif; font-size: 10pt; color: #000000; white-space: pre; }
+code.VB { color: #000000; }
+.keyword { color: Blue; }
+.comment, .blue, .red, .brownish, .maroon, .yellow, .purple { font-family: Consolas, Courier New, Courier, Sans-Serif; font-size: 10pt; }
+.comment { color: Green; }
+.blue { color: Blue; }
+.red { color: Red; }
+.brownish { color: #A31515; }
+.maroon { color: #800000; }
+.yellow { color: #000000; background-color: #FFFF00; }
+.purple { font-weight: bold; color: #800080; }
+.string { color: #A31515; }
+pre { background-color: #f5f5f5; padding: 8.5px; margin: 0 0 18px; line-height: 18px; font-size: 12px; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.15); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; display: block; zoom: 1; min-width: 630px; max-width: 750px; overflow: scroll; width: expression(this.width > 750 ? 750: true); white-space: pre-wrap; /* CSS3 */ word-wrap: break-word; /* Internet Explorer 5.5+ */ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */ }
+
+/* ---------- End of Code Snippet Coloring ---------- */
+/*
+
+/************** We couldn't remove some of the ig-level-1 from some bullets, so we decided to remove the left margin in order to standarize alignment
+.ig-level-1 { margin-left: 20px; }*/
+.ig-level-2 { margin-left: 40px; }
+.ig-level-3 { margin-left: 60px; }
+.ig-level-4 { margin-left: 80px; }
+.ig-italic { font-style: italic; }
+.ig-bold{color: #777;font-weight:bold;}
+.ig-strikethrough { text-decoration: line-through; }
+.ig-centered { text-align: center; }
+.ig-menu-command { background-color: #ccc; font-weight: bold; }
+
+/* ---------- End of IM Topic Styling ---------- */
+
+/*START  NEW STYLES FOR INDIGO*/
+
+/*documentation*/
+
+/*separates top title from the first <p> */
+.content_area{padding:15px 30px 20px;}
+.description { padding: 10px 0; }
+.description .tocList ul { margin: 2px; }
+.ig-block-header h2 { }
+.ig-block-header h4 { }
+
+h2 { color: #00AEEF; }
+h3{padding: 10px 0;color:#777;font-size:1.3em;font-weight:normal;}
+.ig-block-title h3 { color: #00AEEF; }
+h4 { border: 0px; margin-top: 10px; margin-bottom: 7px; padding: 7px 0 4px; font-size: 1.15em; color: #00AEEF; font-weight: normal; }
+.ig-block-header h3 { padding: 10px 0; font-size: 1.2em; font-weight: bold; }
+
+.ig-level-1, .ig-level-2, .ig-level-3, .ig-level-4 { padding: 3px 0; }
+
+.description li.ig-level-1 { margin-left: 20px; padding: 0; }
+.description li.ig-level-2 { margin-left: 40px; padding: 0; }
+.description li.ig-level-3 { margin-left: 60px; padding: 0; }
+.description li.ig-level-4 { margin-left: 80px; padding: 0; }
+
+ol { font-size: 0.857em; }
+/**/
+div.marker { clear: both; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px; margin-top: 20px; }
+div.marker p { color: #999; line-height: 1.5em; padding-top: 5px; }
+
+
+/*html*/
+article#helpTopic > .description ul { list-style-type: disc; }
+#logo { padding-top: 22px; }
+.top_nav { height: 76px; min-width: 740px; }
+header.top_nav h1 { border: 0px; color: #ddd; padding: 10px 0 0 0;
+                    margin-bottom: -5px;/*Fixes browser zooming bug */
+
+}
+header.top_nav h1 a, header.top_nav h1 a:visited { color: #ddd; font-size: 1em; margin: 0; padding: 0; line-height: 1.1em; }
+
+header.top_nav section { width: 740px; }
+.container { width: 800px; }
+
+.igweb p{ margin: 13px 0; word-wrap: normal; }
+.igweb p,.igweb span {color:#656565;font-size:12px;}
+.marginLeft { margin-left: 20px; }
+p.headline { font-size: 1em; margin-bottom: 8px; border: 1px solid #ddd; padding: 6px 10px; background-color: #e9e9e9; text-align: center; }
+ol { font-size: 12px; margin-left: 22px; color: #555; }
+ol li p { font-size: 12px !important; }
+.top_nav { min-width: 820px; }
+header.top_nav section, .container { width: 820px; }
+
+ul.samples { border: 1px solid #ddd; padding: 5px 10px 0 5px; background-color: #e9e9e9; margin: 0; }
+.samples li { width: 130px; float: left; margin-right: 20px; }
+.sampleItem { }
+.sampleItem h5 { margin: 0 10px; font-weight: bold; color: #00AEEF; }
+.col { float: left; width: 400px; margin-right: 60px; }
+.col1 { float: left; width: 340px; }
+.last { margin: 0; }
+
+.listNone { list-style: none; }
+
+
+table.ig-layout p{margin:0}
+table.ig-layout a{font-size: 12px}
+table.ig-layout tr { border-bottom: 1px solid #ccc;}
+table.ig-layout tr:last-child { border:none;}
+table.ig-layout tr .ig-layout-container p{padding:0;}
+table.ig-layout th{padding:5px;}
+table.ig-layout td { padding:0}
+/*IE hack*/
+table.ig-layout tr { _border-bottom: 1px solid #ccc; }
+table.ig-layout tr:last-child { _border-bottom:none;}
+
+.ig-note-caption, .ig-tip-caption { display: block; font-weight: bold; }
+
+/**Made note and icon styles top aligned to support images inside the note/tip structure .*/
+.ig-icon-note, .ig-icon-tip { position: relative; display: block; clear: both; margin: 0.8em; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; color: #999; font-size: 12px;}
+.ig-icon-note{background: transparent url(../images/ig-note-ico.png) no-repeat 10px 20px;padding:10px 10px 10px 50px;}
+.ig-icon-tip{ background: transparent url(../images/ig-tip-ico.png) no-repeat 10px 20px;padding: 10px 10px 10px 50px;}
+.ig-icon-note-content, .ig-icon-tip-content {padding:10px 0;min-height: 35px;}
+
+
+/* END: ig-layout styles */
+.intro_video_list_item .title{margin-bottom:15px;}
+.intro_video_list_item .video_image { border:0px; width:116px; height: 66px;margin: 0 auto;}
+.intro_video_list_item .video_link { margin:0 0 5px 0 ; display:block; width: 126px;}
+.intro_video_list_item .video_link span{text-align: center;display: block;color: #333;}
+.intro_video_list_item .video_description { margin: 5px 0px 15px 5px; padding:0px; }
+
+/* ---------- End of IM Topic Styling ---------- */
+
+
+.igweb .newItem{display: inline; background-color: #57AEF1;font-size: 10px;color: white;padding: 2px 4px;margin-right: 6px;
+        -moz-border-radius: 2px;
+          -webkit-border-radius: 2px;
+          -o-border-radius: 2px;
+          -ms-border-radius: 2px;
+          -khtml-border-radius: 2px;
+          border-radius: 2px;
+    }
+
+/* ----------------------- Slide In Out - Table of Content ------------------------ */
+#slideout_menu { 
+	margin: 0 auto;
+	position: relative;
+	background: #707070 url(/Menu_Icon.png) no-repeat 0 0;
+	border: 1px solid #dedede;
+	border-left: none;
+	float: left;
+	width: 35px;
+	height: 35px;
+	left: 0;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-top: 14px;
+	z-index: 1;
+	box-shadow: 0 0 0 0 #C4C3BD inset,2px 2px 0 rgba(0, 0, 0, 0.10);
+	-moz-box-shadow: 0 0 0 0 #C4C3BD inset,2px 2px 0 rgba(0, 0, 0, 0.10);
+	-webkit-box-shadow: 0 0 0 0 #C4C3BD inset,2px 2px 0 rgba(0, 0, 0, 0.10);
+}
+#slideout_menu_inner {
+	width: 235px; 
+	border: 1px solid #707070; 
+	overflow: hidden; 
+	background-color: #dedede; 
+	float: left;
+	display:none;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+iframe
+{
+	width: 235px;
+	height: 100%;
+	border: none;
+	
+}
+.Description list li a:visited {
+	font-weight: bold;
+}
+#slideout_menu_inner .Help_title
+{
+	list-style-position: inside;
+	list-style-type: square;
+	padding: 10px;
+}
+#slideout_menu_inner li
+{
+	list-style-type: none;
+}
+#slideout_menu li.ig-level-2 {
+	margin-left: 10px;
+	padding: 0;
+}
+#slideout_menu li.ig-level-3 {
+	margin-left: 20px;
+	padding: 0;
+}
+#slideout_menu li.ig-level-3 {
+	margin-left: 20px;
+	padding: 0;
+}
+
+.selected
+{
+	font-weight: bold;
+}
+
+.video-icon-bullet {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gAAAAG1BMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4Gco9AAAACXRSTlMAIjNEVWZ3zP8wOOhBAAAACXBIWXMAAAsSAAALEgHS3X78AAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAABZ0RVh0Q3JlYXRpb24gVGltZQAwNS8yMi8xNIJapnQAAABQSURBVAiZY2DAABUdYNDO0CIRwMDA1uzB0KwBEm+yYOjoADGAZIsEiAGWcmBgYAFLQQBDswRQhBUo0mIBVQPX1SwBNafFAmgyK1AKbhcMAAC8jR1jhi6GzAAAAABJRU5ErkJggg==") no-repeat left 50%;
+    padding-left: 22px!important;
+}

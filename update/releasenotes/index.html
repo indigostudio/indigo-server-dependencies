@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://indigo.infragistics.com/help/releasenotes/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Indigo Studio Help Center</title>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+    </script>
+    <![endif]-->
+    <link rel="stylesheet" href="../releasenotes-files/style.css" type="text/css" media="">
+    <link rel="stylesheet" href="../releasenotes-files/customstyles.css" type="text/css" media="">
+    <link rel="stylesheet" href="../releasenotes-files/releasenotes.css" type="text/css" media="">
+
+    <script>
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+            var results = regex.exec(location.search);
+
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        function loadXMLDoc(filename) {
+            if (window.ActiveXObject) {
+                xhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            else {
+                xhttp = new XMLHttpRequest();
+            }
+
+            xhttp.open("GET", filename + "?cb=" + (Math.random() * 10000000000000000), false);
+            try { xhttp.responseType = "msxml-document" } catch (err) { } // Helping IE11
+            xhttp.send("");
+            return xhttp.responseXML;
+        }
+
+        function displayResult() {
+            var fromVersion = getParameterByName("from");
+            var includeMaintenance = getParameterByName("maintenance");
+
+            var latestVersion = 9;
+            var xmls = [loadXMLDoc("../../updatecheck9/versioninfo.xml"), loadXMLDoc("../../updatecheck8/versioninfo.xml"), loadXMLDoc("../../updatecheck7/versioninfo.xml"), loadXMLDoc("../../updatecheck6/versioninfo.xml"), loadXMLDoc("../../updatecheck5/versioninfo.xml"), loadXMLDoc("../../updatecheck4/versioninfo.xml"), loadXMLDoc("../../updatecheck3/versioninfo.xml"), loadXMLDoc("../../updatecheck2/versioninfo.xml")];
+
+            if (window.ActiveXObject || xhttp.responseType == "msxml-document") {
+                var xsldoc = new ActiveXObject("Msxml2.FreeThreadedDOMDocument.6.0");
+                xsldoc.async = false;
+                xsldoc.load("notes.xsl");
+
+                xsldoc.setProperty("AllowDocumentFunction", true);
+
+                var xslt = new ActiveXObject("Msxml2.XSLTemplate.6.0");
+                xslt.stylesheet = xsldoc;
+
+                var xslproc = xslt.createProcessor();
+                xslproc.addParameter("latestMajorVersionNumber", latestVersion);
+                xslproc.addParameter("fromVersion", fromVersion);
+                xslproc.addParameter("includeMaintenance", includeMaintenance == 1);
+
+                var output = "";
+                for (var i = 0; i < xmls.length; i++) {
+                    xslproc.input = xmls[i];
+                    xslproc.transform();
+                    output += xslproc.output;
+                }
+
+                document.getElementById("content").innerHTML = output;
+            }
+            else if (document.implementation && document.implementation.createDocument) {
+                var xslDoc = loadXMLDoc("notes.xsl");
+
+                xsltProcessor = new XSLTProcessor();
+                xsltProcessor.importStylesheet(xslDoc);
+
+                xsltProcessor.setParameter(null, "latestMajorVersionNumber", latestVersion);
+                xsltProcessor.setParameter(null, "fromVersion", fromVersion);
+                xsltProcessor.setParameter(null, "includeMaintenance", includeMaintenance == 1);
+
+                for (var i = 0; i < xmls.length; i++) {
+                    resultDocument = xsltProcessor.transformToFragment(xmls[i], document);
+                    document.getElementById("content").appendChild(resultDocument);
+                }
+            }
+        }
+    </script>
+<style type="text/css">
+:root #content > #center > .dose > .dosesingle,
+:root #content > #right > .dose > .dosesingle
+{ display: none !important; }</style></head>
+
+<body class="igweb" onload="displayResult()">
+    <header class="top_nav">
+        <section>
+            <a href="http://www.infragistics.com/"><img src="../releasenotes-files/logo.png" alt="INFRAGISTICS" width="200" height="33" class="right" id="logo"></a>
+            <h1 class="left">
+                <a href="http://help.indigodesigned.com/">Indigo Studio Help Center</a>
+            </h1>
+        </section>
+    </header>
+
+    <section id="articleWrapper" class="container">
+        <div id="articleContainer" class="content_area">
+            <article id="helpTopic" class="helpTopic" style="padding:0px">
+                <hgroup><h1 style="font-size:28px">Release Notes</h1></hgroup>
+                <div id="content" class="description release-notes">
+
+                
+<div class="release-notes-item">
+<div class="release-notes-whats-new"></div>
+<div class="release-notes-version-update">
+<span class="version">2017 Vol. 1 (Update 2)</span><time class="pubdate clearfix"><span class="day">21</span><div>
+<span class="month">Sept</span><span class="year">2017</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Visual improvements for Mac Retina Display</li>
+<li> Added Linea icon pack</li>
+<li> Performance improvements when opening and saving screens and screenparts</li>
+<li> Improvements in the icon picker</li>
+<li> Added sorting documents by type in the Project Home</li>
+<li> Remember view setting for Project Home</li>
+<li> Added search for font picker</li>
+<li> Updated visual design, especially for some message dialogs</li>
+<li> Bug fixing, as usual</li>
+</ul>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Indigo Studio 2017 Vol. 1</span><time class="pubdate clearfix"><span class="day">21</span><div>
+<span class="month">June</span><span class="year">2017</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Gain qualitative and quantitative insights with unmoderated usability testing
+   on <a target="_blank" href="https://indigodesigned.com/">indigodesigned.com</a><ul class="release-notes-list list">
+<li> Watch video recordings of usability study sessions (both video and audio)</li>
+<li> Add notes when watching videos to capture your observations</li>
+<li> View clickmap for each participant</li>
+<li> User flows are categorized based on popularity</li>
+<li> Allow participants to complete usability task using altenative flows</li>
+</ul>
+</li>
+<li> Animation presets when adding and removing UI elements (fade, slide, flip, and pop)</li>
+<li> Visual design refresh for the design surface, timeline, and toolbox</li>
+<li> Copy and paste data from Excel into Table UI element</li>
+<li> Use Alt + Click + ":" to search and add icons</li>
+<li> Improved journal navigation between visited states</li>
+<li> View all UI states using the keyboard shortcut "Space + X"</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="https://www.infragistics.com/community/blogs/infragistics/archive/2017/07/18/ultimate-17-1-indigo-studio-whats-new.aspx">
+                    READ MORE
+                  </a></div>
+</div>
+<div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">2016 Vol. 2 (Update 3)</span><time class="pubdate clearfix"><span class="day">19</span><div>
+<span class="month">June</span><span class="year">2017</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Download and use Google fonts in your prototypes</li>
+<li> More options for font weight when using Google fonts (e.g., thin-100, light-300)</li>
+<li> Specific interactions for iOS UI elements (e.g., when user "turns on" switch) </li>
+<li> Bug fixes, always</li>
+</ul>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">2016 Vol. 2 (Update 2)</span><time class="pubdate clearfix"><span class="day">21</span><div>
+<span class="month">Mar</span><span class="year">2017</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Support for GIFs in prototypes</li>
+<li> Specific interaction triggers for checkbox, radio buttons, tabs, listbox, dropdown, 
+   and tree</li>
+<li> One less step when adding an interaction for navigating to a URL or to a new screen</li>
+<li> Highlight element when hovering over an action for that element in the Timeline</li>
+<li> Search in Elements &amp; Layers panel and image picker</li>
+<li> Updated visual design for application menu and project home</li>
+<li> Updated visual design for icon picker, image picker, and Import screenpart dialog</li>
+<li> Help &amp; support tab in the application menu now shows more ways to get in touch 
+   with us and a link to the help center</li>
+<li> About tab in the application menu includes support and license information</li>
+<li> Welcome dialog for new users, showing how prototyping works in Indigo Studio</li>
+<li> Guided walkthrough to help new users create and share a simple prototype</li>
+<li> Bug fixes for color picker, mini-IX explorer, and more</li>
+</ul>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Announcing Indigo Studio 2016 Vol. 2</span><time class="pubdate clearfix"><span class="day">11</span><div>
+<span class="month">Nov</span><span class="year">2016</span>
+</div></time>
+</div>
+<div class="release-notes-version-description">Introducing Group Workspaces for collaboration &amp; free and affordable subscription plans for Indigo Studio.</div>
+<ul class="release-notes-list list">
+<li>Create your very own private design community with group workspaces on indigodesigned.com<ul class="release-notes-list list">
+<li> Share prototypes or design libraries to a private group. Only invited members 
+    can see them.</li>
+<li> Get email notifications when members publish or make changes to the designs in
+    a group workspace.</li>
+<li> Allow any member of the workspace to set up usability studies for your shares, 
+    and view results.</li>
+<li> Access prototypes and design libraries directly from within Indigo Studio�s 
+    main app menu.</li>
+</ul>
+</li>
+<li>Announcing free and affordable subscription plans for Indigo Studio<ul class="release-notes-list list">
+<li> Indigo Studio Essential, which brings all of Indigo�s essential design and 
+    prototyping features to you � absolutely free!</li>
+<li> Indigo Studio Professional, which includes all of the collaborative tools and 
+    usability testing features you�ve come to love in Indigo while adding up to five 
+	concurrent group workspaces for teams.</li>
+<li> Indigo Studio Enterprise, which offers the same full set of features as Indigo 
+    Studio Professional, with no caps or limits on group workspaces.</li>
+<li> Visit <a target="_blank" href="http://indigo.infragistics.com/pricing">how to buy</a>
+</li>
+</ul>
+</li>
+<li><i xmlns:custom="extensions">Bug fixes, of course.</i></li>
+</ul>
+</div>
+<div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Announcing Indigo Studio 2016 Vol. 1</span><time class="pubdate clearfix"><span class="day">18</span><div>
+<span class="month">Apr</span><span class="year">2016</span>
+</div></time>
+</div>
+<div class="release-notes-version-description">Get insights on how well your prototypes perform with real people based on what they do through our new Usability Studies on <a target="_blank" href="https://indigodesigned.com/">indigodesigned.com</a>.</div>
+<ul class="release-notes-list list">
+<li>Introducing Usability Studies on indigodesigned.com<ul class="release-notes-list list">
+<li> Start by creating a study for any prototype shared on indigodesigned.com.</li>
+<li> Create tasks for the study and record the flows of how you expect your users to
+    complete them.</li>
+<li> Invite participants who can take your study remotely using a web browser on 
+    desktop or a mobile device.</li>
+<li> Get a concise study summary including task success rates and completion times, 
+    always fresh as it�s live updated while the study is open.</li>
+<li> Check the click-map visualization including both successful interactions and failed
+    attempts to compare expectations against the designed flow.</li>
+<li> Review feedback left by participants while running the tasks.</li>
+</ul>
+</li>
+<li>Introducing Stylesheets<ul class="release-notes-list list">
+<li> Stylesheets are a new type of document that helps you keep consistent looks
+    across your project.</li>
+<li> They provide an empty canvas where you can drag and drop, customize, and 
+    name any number of UI elements.</li>
+<li> You can then apply a named style on Screens and Screenparts and any update 
+    made on the stylesheet will immediately be reflected everywhere.</li>
+<li> You can also use them to try visual alternatives. Just duplicate your stylesheet,
+    modify that copy and then set it as default making the whole project look 
+    different.</li>
+</ul>
+</li>
+<li>Extracting code snippets<ul class="release-notes-list list">
+<li> This version of Indigo Studio comes with support for generating code snippets in 
+     HTML/JS/CSS for the UI Elements of the Essentials Pack.</li>
+<li> People implementing the designs don't need to inspect Indigo prototypes in detail,
+     they can check the generated code to grab an RGB color, a CSS class, the details 
+     of a CSS animation, the Bootstrap configuration for responsive pages, and more.</li>
+<li> Generation works on any number of selected elements or over an entire State of
+     your Screen or Screenpart.</li>
+<li> You can also get clean CSS code from Stylesheets.</li>
+</ul>
+</li>
+<li><i xmlns:custom="extensions">And many other UX improvements to make the prototyping experience even more enjoyable!</i></li>
+</ul>
+</div>
+<div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">2015 Vol. 2 (Update 1)</span><time class="pubdate clearfix"><span class="day">23</span><div>
+<span class="month">Feb</span><span class="year">2015</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> You can now use the ENTER or RETURN key to trigger interactions on text input 
+   elements</li>
+<li> Added support for looping changes and transitions defined in the animation timeline
+   (infinite loops)</li>
+<li> Exposed more transition options to replay and/or reverse changes in the animation
+   timeline (or animation segments)</li>
+<li> You can now search and add Screenparts using the ALT+click shortcut (quick add)</li>
+<li> Updated the visuals for generic phone, tablet and iPad device chromes</li>
+<li> Support for flipping images horizontally or vertically</li>
+<li> Changed the size and layout of thumbnails shown in the project gallery view</li>
+<li> New toast notification style for export progress, capturing screenshot, and updating
+   references</li>
+<li> Updated the Font Awesome icon collection to the latest version (i.e., fresh icons)</li>
+<li> Bug fixes</li>
+</ul>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Announcing Indigo Studio 2015 Vol. 2</span><time class="pubdate clearfix"><span class="day">12</span><div>
+<span class="month">Oct</span><span class="year">2015</span>
+</div></time>
+</div>
+<div class="release-notes-version-description">We changed how we name major releases for Indigo Studio, instead of Version 6 the new version is 2015 Vol. 2, <a target="_blank" href="http://indigo.infragistics.com/update/6/learnmore">learn more</a>.</div>
+<ul class="release-notes-list list">
+<li>Add Comments to Prototypes Shared on indigodesigned.com<ul class="release-notes-list list">
+<li> Unlimited number of comments and reviewers</li>
+<li> Reviewers can add comments without requiring a user account</li>
+<li> Mark comments for follow-up or archive old comments</li>
+<li> Open or close comments at any time as a prototype owner</li>
+<li> Comments are updated near real time</li>
+<li> Choose to get notified by email when new comments are added</li>
+<li class="quote"><i xmlns:custom="extensions">To use commenting, sign in with your Infragistics.com account and share your prototypes on indigodesigned.com.</i></li>
+</ul>
+</li>
+<li>Build More Powerful Prototypes<ul class="release-notes-list list">
+<li> Support for inline text formatting (rich text) in the text UI element</li>
+<li> Included all icons from FontAwesome</li>
+<li> Support for rotating icons, and flipping them horizontally or vertically</li>
+<li> Support for interactions based on text field value</li>
+</ul>
+</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2015/10/12/releasing-indigo-studio-2015-vol-2.aspx#comments">
+                    READ MORE
+                  </a></div>
+</div>
+<div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 5 (Update 2)</span><time class="pubdate clearfix"><span class="day">26</span><div>
+<span class="month">Aug</span><span class="year">2015</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> New option for docking/fixing properties panel to the toolbox</li>
+<li> Moved rulers to the outer edges of the design surface</li>
+<li> Click+drag on ruler to create a new guide</li>
+<li> New snap indicators when guides meet a UI element</li>
+<li> Elements and layers panel is now shown as the third tab in the toolbox</li>
+<li> Moved canvas quick actions (e.g. zoom and fit) to bottom right corner of the 
+   design surface</li>
+<li> Moved save, undo/redo to the primary/contextual toolbar on top, alongside RUN 
+   option</li>
+<li> Improved the performance when switching between UI states</li>
+<li> Tweaks to the import a new screenpart library flow</li>
+<li> Bug fixes</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2015/08/24/docking-property-editor-and-ui-guides-revisited.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 5 (Update 1)</span><time class="pubdate clearfix"><span class="day">19</span><div>
+<span class="month">June</span><span class="year">2015</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Download and import libraries from indigodesigned.com</li>
+<li> Changes to the "replace share" user flow to allow reviewing share details before replacing an existing share</li>
+<li> Option to import screenpart libraries from the project home</li>
+<li> Remember recently used export path (destination folder)</li>
+<li> New option to sign in to indigodesigned.com from anywhere in the app</li>
+<li> UI tweaks to the "Manage Shares" dialog to identify private shares linked to your user account</li>
+<li> Bug fixes</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2015/08/26/importing-custom-ui-libraries-from-indigodesigned-com.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 5 &amp; introducing indigodesigned.com!</span><time class="pubdate clearfix"><span class="day">13</span><div>
+<span class="month">Apr</span><span class="year">2015</span>
+</div></time>
+</div>
+<div class="release-notes-version-description">Share all your prototypes privately or with the community on indigodesigned.com. Simply sign in inside Indigo Studio before sharing your designs. You can then access anything you shared on indigodesigned.com using the web browser, on any device.</div>
+<ul class="release-notes-list list">
+<li>Organize, download, and more<ul class="release-notes-list list"><li>Use tags to organize your shares, edit their details anytime, download project files, or simply take a peek at usage analytics on indigodesigned.com.</li></ul>
+</li>
+<li>Share and import screenpart libraries<ul class="release-notes-list list"><li>Indigo now introduces the possibility to share screenpart libraries if what you�re sharing are only screenparts. Libraries can then be imported on any project to allow easy reuse. </li></ul>
+</li>
+<li>Explore designs uploaded by other users<ul class="release-notes-list list"><li>Explore and download prototypes or reusable screenpart libraries contributed by users like you.</li></ul>
+</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2015/04/29/version-5-released-and-introducing-indigodesigned-com.aspx">
+                    READ MORE
+                  </a></div>
+</div>
+<div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 4 (Update 3)</span><time class="pubdate clearfix"><span class="day">13</span><div>
+<span class="month">Mar</span><span class="year">2015</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Support for drag-reordering open tabs (documents)</li>
+<li> Editors to enter position and size values</li>
+<li> Refresh in project home to show changes in file system without re-opening project</li>
+<li> Search for and delete Screenparts from toolbox</li>
+<li> Enhancements to image picker to remember sort order and show image name</li>
+<li> Tweaks to property editor to hide during multi-select</li>
+<li> Visual tweaks to UI elements toolbox</li>
+<li> Bug fixes</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2015/03/16/releasing-update-3-for-indigo-studio-v4.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 4 (Update 2)</span><time class="pubdate clearfix"><span class="day">8</span><div>
+<span class="month">Jan</span><span class="year">2015</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Redesigned open project tabs as a compact dropdown to switch between
+   projects</li>
+<li> Redesigned application menu</li>
+<li> Added dropdown menu to easily switch between open documents</li>
+<li> Added new iPhone 6 and 6+ device chromes</li>
+<li> Made tweaks to the iOS pack for iPhone 6/6+ devices</li>
+<li> Enhanced Map view stencil to embed a Google map easily</li>
+<li> Enhanced Video player stencil to display videos from services like
+   Youtube, Vimeo</li>
+<li> Added support for right-aligning content in text input box</li>
+<li> Added new touch cursor when viewing device prototypes on the desktop</li>
+<li> Bug fixes</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2015/01/07/releasing-update-2-for-indigo-studio-v4.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 4 (Update 1)</span><time class="pubdate clearfix"><span class="day">13</span><div>
+<span class="month">Nov</span><span class="year">2014</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Support for background image inside cells of Bootstrap containers</li>
+<li> Enabled generating HTML code assets from responsive prototypes (BETA)</li>
+<li> Added option for creating new designs from the project tab</li>
+<li> Added list view option in the project home</li>
+<li> Added "Start a new Project" in the main application menu</li>
+<li> Included sample that makes use of responsive views (under "samples" in the
+   application menu)</li>
+<li> Bug fixes</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2015/01/06/releasing-update-1-for-indigo-studio-v4.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 4</span><time class="pubdate clearfix"><span class="day">13</span><div>
+<span class="month">Oct</span><span class="year">2014</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Added Responsive views to target webpage layout for phone/tablet/desktop
+   and large desktop</li>
+<li> Support for bootstrap rows and cells (columns) to design responsive layouts and 
+   extensible HTML markup</li>
+<li> 12-Column layout grid powering the design canvas for precise responsive layouts</li>
+<li> Fluid UI elements that automatically adjust and resize in web prototypes</li>
+<li> Add and visualize margins for spacing UI elements in a web-friendly way</li>
+<li> Switch between responsive views when viewing the prototype in the browser</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2014/10/15/releasing-version-4-of-indigo-studio-now-with-responsive-web-design.aspx">
+                    READ MORE
+                  </a></div>
+</div>
+<div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 3 (Update 4)</span><time class="pubdate clearfix"><span class="day">2</span><div>
+<span class="month">Oct</span><span class="year">2014</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Added rulers for the canvas</li>
+<li> Added the ability to create and edit visual guides on the design surface</li>
+<li> Added an option to disable common input controls (e.g., buttons, text fields)</li>
+<li> Included more icons</li>
+<li> Bug fixes to improve stability</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2014/10/03/releasing-update-4-for-indigo-studio-v3.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 3 (Update 3)</span><time class="pubdate clearfix"><span class="day">20</span><div>
+<span class="month">Aug</span><span class="year">2014</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> View and republish prototypes on the Infragistics servers, allowing you to reuse the prototype URL</li>
+<li> View and delete any prototype shared on the Infragistics servers</li>
+<li> Preview and open screen states right from inside project home</li>
+<li> Easily add navigate-to interactions to a screen state of a different screen</li>
+<li> Add a screenpart inside a screenpart source</li>
+<li> Add a group inside a group and form groups of groups</li>
+<li> Automatically size images for retina iOS device prototypes</li>
+<li> Faster maintenance updates outside of major updates for quicker bug fixes</li>
+<li> Improvements to the cut &amp; paste operations, and preserved interactions</li>
+<li> Bug fixes, naturally</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2014/08/08/releasing-update-3-for-indigo-studio-v3.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 3 (Update 2)</span><time class="pubdate clearfix"><span class="day">26</span><div>
+<span class="month">June</span><span class="year">2014</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Restyled Project Home - visual tweaks to project home to give it a new look</li>
+<li> Paste as images from Clipboard - Indigo now understands image content placed 
+   on the clipboard. You can select an image or part of it from software like Snagit, 
+   preview (OS X), GIMP and paste it inside Indigo without the need of saving the 
+   image</li>
+<li> Support for recently used colors and eye-dropper to pick colors</li>
+<li> Remember recently used font and improvements to font picker � the last used font 
+   is set automatically for new elements</li>
+<li> Remember sort by setting in project home � Indigo now remembers your last 
+   selection for sorting designs in each project</li>
+<li> Inverted the ordering shown in Elements and Layers panel so that most recently 
+   added element is on top of the list</li>
+<li> Bug Fixes, of course</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2014/06/27/releasing-update-2-for-indigo-studio-v3.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 3 (Update 1)</span><time class="pubdate clearfix"><span class="day">31</span><div>
+<span class="month">May</span><span class="year">2014</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Added image thumbnails in the list of shared screens in the prototype (Table of 
+   Contents)</li>
+<li> Included three new fonts for designing your prototypes (Source Sans Pro, Roboto, 
+   Roboto Condensed)</li>
+<li> Tweaked the visual style of interactions explorer to better connect it to the state name 
+   in the designer </li>
+<li> Improved the appearance of the lock and visibility icons</li>
+<li> Bug fixes</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2014/06/27/releasing-update-1-for-indigo-studio-v3.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 3 &amp; Introducing Screenparts</span><time class="pubdate clearfix"><span class="day">28</span><div>
+<span class="month">Apr</span><span class="year">2014</span>
+</div></time>
+</div>
+<div class="release-notes-version-description">Screenparts let you reuse parts of your designs across screens and projects. You can create reusable custom buttons, dialogs, or navigation toolbars; even add the entire screen as a screenpart to use as a master. You can also create interactive widgets by adding interactions inside each screenpart!</div>
+<ul class="release-notes-list list">
+<li>Customize screenpart instances, as required, for any screen<ul class="release-notes-list list"><li>After creating a new screenpart or converting an existing UI element into a screenpart, you have full creative control to override the screenpart instance. And just as easily reset the instance to the original screenpart.</li></ul>
+</li>
+<li>Change source screenpart to update everywhere<ul class="release-notes-list list"><li>Screenparts can be used as master elements on your screen. Any changes made to the source screenpart are automatically reflected wherever the screenpart is used. The screenpart can contain a single UI element (e.g., button), a collection of elements (e.g., footer design), or an entire page layout (e.g., Home page).</li></ul>
+</li>
+<li>Create interaction flows inside screenparts with states<ul class="release-notes-list list"><li>Define user interactions on the source screenpart. You can either define screenpart states to simulate widget-like functionality or add navigation interactions to reuse screenparts to navigate across screens.</li></ul>
+</li>
+<li>Easily organize your screenpart/Custom UI Library<ul class="release-notes-list list"><li>Add custom categories to organize screenparts in your UI library. You can also add a screenpart to multiple libraries by right clicking on it and using the context menu.</li></ul>
+</li>
+<li>Export screenparts to use in a different project<ul class="release-notes-list list"><li>Exporting screenparts packages up used images and categories. When you add it to another project, your screenpart library comes organized and ready to go.</li></ul>
+</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2014/04/28/releasing-version-3-of-indigo-studio-w-reusable-amp-custom-design-elements.aspx">
+                    READ MORE
+                  </a></div>
+</div>
+<div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 2 (Update 5)</span><time class="pubdate clearfix"><span class="day">1</span><div>
+<span class="month">Apr</span><span class="year">2014</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li>Improvements to Project Home (Gallery view)<ul class="release-notes-list list">
+<li> Manage your Indigo project from inside Indigo Studio application<ul class="release-notes-list list">
+<li> Create/Move/Delete folders in the project (tree)</li>
+<li> Drag and drop files into folders from inside Indigo, and without having to
+       update navigation links</li>
+<li> Added context menu (right click) for project tree items</li>
+</ul>
+</li>
+<li> It�s now easier to read longer screen/storyboard names</li>
+</ul>
+</li>
+<li>Changes to Container Editing<ul class="release-notes-list list">
+<li> Containers are now edited as groups. As in, use double-click or hit enter key 
+   for a selected container to edit</li>
+<li> Breadcrumbs navigation to help with editing nested elements/containers</li>
+<li> Hold down SPACE (shortcut) to drag and drop content into container. No 
+   more accidental drops</li>
+<li> Added drop target invitation when dragging an element on top of containers</li>
+</ul>
+</li>
+<li>Special Select Mode<ul class="release-notes-list list">
+<li> Selecting with mouse cursor while holding the SPACE key will select a nested element directly (e.g., in containers or groups)</li>
+<li>Support for Scrolling in Containers � Yay!</li>
+<li> Also supported in tabs, pagers, and segmented tabs controls</li>
+<li> To enable scrolling, resize the container by dragging from the bottom right 
+   corner in edition mode</li>
+<li> Set to any scroll-position by moving the <i xmlns:custom="extensions">visible area</i> of the container</li>
+</ul>
+</li>
+<li>Visual Improvements to ALT+CLICK Search<ul class="release-notes-list list"><li> Bumped up the size of icons shown in ALT+CLICK search suggestions to 
+   match the UI elements in the toolbox</li></ul>
+</li>
+<li>Bug fixes!</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2014/04/03/releasing-update-5-for-indigo-studio.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 2 (Update 4)</span><time class="pubdate clearfix"><span class="day">26</span><div>
+<span class="month">Feb</span><span class="year">2014</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Enhanced Prototype Viewer<ul class="release-notes-list list">
+<li> You can completely hide the toolbar when viewing or demoing prototypes</li>
+<li> View a list of screens shared in the prototype, even on devices</li>
+<li> Jump directly to any of the screen states using the Interactions Explorer 
+       (desktop browsers only)</li>
+</ul>
+</li>
+<li> More options (or rather removed some restrictions) when sharing your
+   prototype<ul class="release-notes-list list">
+<li> You can now share any number of screens in your project even if
+       there are no interactions defined between them</li>
+<li> When sharing a single screen, you can automatically include any linked
+       screens</li>
+</ul>
+</li>
+<li> Added quick text formatting shortcuts (e.g., Ctrl + B or Cmd + B for bolding text)</li>
+<li> Serious performance improvements when opening the project home/gallery</li>
+<li> More responsive swipe gestures on devices</li>
+<li> Added improvements to lock down scroll/bounce on iOS devices when scroll
+   is not present and when added to home screen</li>
+<li> And of course� bug fixes</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2014/02/28/releasing-update-4-for-indigo-studio.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 2 (Update 3)</span><time class="pubdate clearfix"><span class="day">13</span><div>
+<span class="month">Jan</span><span class="year">2014</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Added feature to automatically update navigation links after you change the screen name. No more broken links!</li>
+<li> Added unique URL for screen states when viewing prototypes in the browser. That is, you can share/bookmark a specific screen state or screen.</li>
+<li> Made it easier to design for generic phone and tablet (e.g., Windows Phone, Android). You can also look up viewport dimensions for other devices.</li>
+<li> You can now specify watermark or hint text for text fields.</li>
+<li> Fixes for bugs reported by Indigo Users. If you have a case created with Indigo Support, you should be getting an email notification.</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2014/02/27/releasing-update-3-for-indigo-studio-v2.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 2 (Update 2)</span><time class="pubdate clearfix"><span class="day">19</span><div>
+<span class="month">Nov</span><span class="year">2013</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Releasing the new iOS 7 pack! Everything you love in the original iOS pack, but updated to match iOS 7 style.</li>
+<li> Added auto-recovery feature to recover unsaved changes if Indigo Studio quits suddenly.</li>
+<li> Added a way to set visibility of notes/annotations when sharing a prototype.</li>
+<li> Remember most recently used folder path, when sharing prototypes to a folder location on your computer.</li>
+<li> Remember most recently used icon group in the icon picker.</li>
+<li> BETA- added ability to export HTML code assets when previewing a prototype or from a prototype that�s been shared in the browser. Email your feedback to <a href="mailto:indigo@infragistics.com">indigo@infragistics.com</a>. Much appreciated!</li>
+</ul>
+<div class="release-notes-footer"><a target="_blank" class="release-notes-read-more" href="http://www.infragistics.com/community/blogs/indigo-studio/archive/2013/11/15/what_2700_s-new-in-indigo-studio-version-2-update-2.aspx">
+                    READ MORE
+                  </a></div>
+</div><div class="release-notes-item">
+<div class="release-notes-version-update">
+<span class="version">Version 2 (Update 1)</span><time class="pubdate clearfix"><span class="day">29</span><div>
+<span class="month">Oct</span><span class="year">2013</span>
+</div></time>
+</div>
+<ul class="release-notes-list list">
+<li> Added display of x-y coordinate information for selected items and when dragging</li>
+<li> Added display angle values when rotating elements that support rotation</li>
+<li> Improved the style of tooltips to better separate filename from filepath information</li>
+<li> Made improvements to PDF export to handle more situations</li>
+<li> Improved the interactions and rendering of iOS date picker in the shared prototype</li>
+<li> Fixed issue related to selecting images using the image pickers (control)</li>
+<li> Fixed issue which caused screens to get clipped when navigating from a screen of smaller size to bigger one</li>
+<li>... and many more bug fixes.</li>
+</ul>
+</div></div>
+            </article>
+        </div>
+    </section>
+</body></html>

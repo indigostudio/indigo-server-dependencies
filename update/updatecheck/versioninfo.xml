@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<update>
+<item learnMore="https://www.infragistics.com/community/blogs/infragistics/archive/2017/07/18/ultimate-17-1-indigo-studio-whats-new.aspx">
+    <version>9.1.0.48</version>
+    <date>6/21/2017 20:00:00 PM</date>
+    <releaseNotes>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="14"><Bold>Indigo Studio 2017 Vol. 1</Bold></Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Gain qualitative and quantitative insights with unmoderated usability testing
+   on <Hyperlink NavigateUri="https://indigodesigned.com">indigodesigned.com</Hyperlink></Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">     · Watch video recordings of usability study sessions (both video and audio)</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">     · Add notes when watching videos to capture your observations</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">     · View clickmap for each participant</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">     · User flows are categorized based on popularity</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">     · Allow participants to complete usability task using altenative flows</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Animation presets when adding and removing UI elements (fade, slide, flip, and pop)</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Visual design refresh for the design surface, timeline, and toolbox</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Copy and paste data from Excel into Table UI element</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Use Alt + Click + ":" to search and add icons</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Improved journal navigation between visited states</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* View all UI states using the keyboard shortcut "Space + X"</Paragraph>
+      <Paragraph FontSize="5"/>
+    </releaseNotes>
+  </item>
+  <item maintenance="true">
+    <version>9.1.1000.53</version>
+    <date>7/21/2017 20:00:00 PM</date>
+    <releaseNotes>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="14"><Bold>2017 Vol. 1 (Update 1.1)</Bold></Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">Improvements include</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Fix for a navigation problem between screens with multi-byte characters</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Fix for screenpart instance customizations not being displayed in some scenarios</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Minor fixes related to highlighting interactions and google fonts support</Paragraph>
+      <Paragraph FontSize="5"/>
+    </releaseNotes>
+  </item>
+  <item maintenance="true">
+    <version>9.1.2000.57</version>
+    <date>8/3/2017 20:00:00 PM</date>
+    <releaseNotes>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="14"><Bold>2017 Vol. 1 (Update 1.2)</Bold></Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">Improvements include</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Fix for problem displaying links with Google Fonts in the player</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Fix for fonts with bold and underline in screens with Google Fonts and rich text</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Fix for color picker positioning issue in 4k HiDPI monitors</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Changes in the Help &amp; Support section</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Minor changes in styles, and more bug fixes</Paragraph>
+      <Paragraph FontSize="5"/>
+    </releaseNotes>
+  </item>
+  <item maintenance="false">
+    <version>9.2.0.72</version>
+    <date>9/21/2017 20:00:00 PM</date>
+    <releaseNotes>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="14"><Bold>2017 Vol. 1 (Update 2)</Bold></Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Visual improvements for Mac Retina Display</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Added Linea icon pack</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Performance improvements when opening and saving screens and screenparts</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Improvements in the icon picker</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Added sorting documents by type in the Project Home</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Remember view setting for Project Home</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Added search for font picker</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Updated visual design, especially for some message dialogs</Paragraph>
+      <Paragraph FontSize="5"/>
+      <Paragraph FontSize="12">* Bug fixing, as usual</Paragraph>
+      <Paragraph FontSize="5"/>
+    </releaseNotes>
+  </item>
+  </update>

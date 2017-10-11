@@ -1,0 +1,173 @@
+.marginLeft {
+  margin-left: 50px;
+}
+
+.list a {
+  font-size: 1em;
+  margin: 0;
+  padding: 0px;
+}
+
+.igweb ul {
+  list-style-type: disc;
+}
+
+ul.list {
+  margin: 10px;
+}
+
+.top_nav {
+  min-width: 700px;
+}
+
+ .release-notes {
+	padding:10px
+}
+
+.release-notes-item {
+	margin-bottom:50px;
+}
+
+.release-notes-item:first-child {
+  border:1px solid #875AB3;      
+}
+
+.release-notes-whats-new {
+	font-weight:bold;
+}
+
+	.release-notes-whats-new:after {
+		display:block;
+		content: "What's new";
+		padding: 0 10px;
+		background:#875AB3;
+		color:#fff;
+		line-height:30px;
+	}
+		.release-notes-whats-new + .release-notes-version-update,
+		.release-notes-whats-new ~ .release-notes-list {
+			margin:10px 20px 10px 20px;
+		}
+		
+		.release-notes-whats-new + .release-notes-version-update {
+			border-bottom: 1px solid;
+			border-color: inherit;
+		}    
+
+.release-notes-version-update {
+	font-weight:bold;
+	padding-bottom: 10px;
+	border-bottom: #C4C4C4 solid 1px;
+	margin: 10px 0px;
+}
+
+.release-notes-version-update .pubdate {
+	position: relative;
+	top: -4px;
+	float:right;
+	padding: 2px 3px;
+	border: 1px solid #cccccc;
+	border-radius:10px;
+	background-color: #fafafa;
+}
+
+.release-notes-version-update .day {
+	vertical-align: middle;
+	font-size: 14px;
+	padding: 0 4px;
+	text-align:center;
+	margin:0;
+}
+
+.release-notes-version-update .pubdate > div{
+	
+	display: inline-block;
+
+	vertical-align: middle;
+	border-left: 1px solid #cccccc;
+	padding: 0 4px;
+	margin:2px 0 0 0;
+}
+
+.release-notes-version-update .month {
+display: block;
+	font-weight: bold;
+	margin: 0;
+	font-size: 8px;
+	position: relative;
+	top: -2px;
+}
+
+.release-notes-version-update .year {
+	display:block;
+	font-weight: normal;
+	color:gray;
+	margin: 0;
+	font-size: 8px;
+	position: relative;
+	top: -2px;
+	line-height: 7px;
+}
+		
+.version {
+}
+
+.release-notes-version-description{
+        padding-bottom: 10px;
+        margin: 20px;
+        color: #875AB3;
+        font-size: 12px;
+        background: infoBackground;
+        padding: 20px 20px;
+        background-color: #F4F0FD;
+        border: 1px solid #DED2FD;
+}
+
+.release-notes-list{
+}
+
+.release-notes-list li{
+    font-size: 12px!important;
+}
+
+.release-notes-list li.quote {
+    list-style-type: none;
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.release-notes-version-description a,
+.release-notes-list a {
+    color: #875AB3;
+    font-weight: 600;
+}
+
+.release-notes-version-description a:hover,
+.release-notes-list a:hover {
+    color: #875AB3;
+    text-decoration: underline;
+}
+
+.content_area {
+    font-size: 12px;
+}
+
+article#helptopic ul > li {
+    margin-bottom: 5px
+}
+
+.release-notes a.release-notes-read-more {
+        display: inline-block;
+        padding: 0 10px;
+        background: #875AB3;
+        color: #fff;
+        line-height: 26px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 3px
+      }
+
+.release-notes-footer{
+    margin: 20px;
+}
